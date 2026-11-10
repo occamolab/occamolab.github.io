@@ -43,7 +43,7 @@ a:hover { color: var(--muted); }
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
-  padding: 2rem 0 1.5rem;
+  padding: 1.2rem 0 1rem;
   border-bottom: 1px solid var(--line);
 }
 
@@ -56,8 +56,8 @@ a:hover { color: var(--muted); }
 .brand:hover { color: var(--ink); }
 .brand img {
   display: block;
-  width: 88px;
-  height: 88px;
+  width: auto;
+  height: 96px;
 }
 
 nav { display: flex; gap: 1.2rem; }
@@ -68,9 +68,9 @@ nav a {
 }
 nav a:hover { color: var(--ink); }
 
-main { padding: 0 0 5rem; }
+main { padding: 0 0 2rem; }
 
-.hero { padding: 6rem 0 7rem; }
+.hero { padding: 3rem 0 3rem; }
 .kicker {
   margin: 0 0 1.2rem;
   color: var(--muted);
@@ -82,15 +82,15 @@ h1 {
   margin: 0 0 1.4rem;
   font-family: var(--serif);
   font-weight: 500;
-  font-size: clamp(2.8rem, 9vw, 4.6rem);
+  font-size: clamp(2.4rem, 7vw, 3.6rem);
   line-height: 1;
   letter-spacing: -.045em;
 }
 .manifesto {
   max-width: 34rem;
-  margin: 0 0 1.6rem;
+  margin: 0 0 1.2rem;
   font-family: var(--serif);
-  font-size: clamp(1.2rem, 2.6vw, 1.55rem);
+  font-size: clamp(1.15rem, 2.2vw, 1.4rem);
   font-weight: 400;
   line-height: 1.4;
   letter-spacing: -.01em;
@@ -100,10 +100,10 @@ h1 {
   max-width: 30rem;
   margin: 0;
   color: var(--muted);
-  font-size: 1.05rem;
+  font-size: 1rem;
 }
 
-.work, .contact { padding: 2.5rem 0; border-top: 1px solid var(--line); }
+.work, .contact { padding: 1.75rem 0; border-top: 1px solid var(--line); }
 .label {
   margin: 0 0 1.4rem;
   color: var(--muted);
@@ -127,7 +127,7 @@ h1 {
 .contact p { margin: 0; font-size: 1.05rem; }
 
 .site-footer {
-  padding: 2rem 0 3rem;
+  padding: 1.2rem 0 1.5rem;
   border-top: 1px solid var(--line);
   color: var(--muted);
   font-size: .8rem;
@@ -138,5 +138,5 @@ h1 {
   .site-header { padding-top: 1.5rem; }
   .hero { padding: 4.5rem 0 5rem; }
   nav { gap: .9rem; }
-  .brand img { width: 68px; height: 68px; }
+  .brand img { width: auto; height: 72px; }
 }
