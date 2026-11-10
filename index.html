@@ -18,7 +18,7 @@
   <meta name="twitter:image" content="https://occamolab.org/logo.png">
   <link rel="icon" href="logo.png" type="image/png">
   <link rel="apple-touch-icon" href="logo.png">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=3">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -67,19 +67,20 @@
 
     <main id="main">
       <section class="hero">
-        <h1 class="hero-copy">
+        <h1 class="sr-only">OccamoLab — independent research group</h1>
+        <p class="hero-copy">
           <strong>OccamoLab</strong> — an independent research group. We build neural
           networks that stay small, exact, and auditable by composing them with known laws.
-        </h1>
-      </section>
+        </p>
 
-      <section id="research" class="research">
-        <p class="label">Research interests</p>
-        <ul class="bullets">
-          <li>Composing learned models with exact laws — group structure, geometric deep learning</li>
-          <li>Robot-arm calibration and inertial navigation</li>
-          <li>Parameter-efficient models for edge and embedded deployment</li>
-        </ul>
+        <div class="interests">
+          <p class="label">Research interests</p>
+          <ul class="bullets">
+            <li>Composing learned models with exact laws — group structure, geometric deep learning</li>
+            <li>Robot-arm calibration and inertial navigation</li>
+            <li>Parameter-efficient models for edge and embedded deployment</li>
+          </ul>
+        </div>
       </section>
 
       <section id="lawkan" class="lawkan">
