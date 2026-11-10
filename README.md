@@ -1,11 +1,12 @@
 # occamolab.org
 
-Static one-page site for OccamLab, served by GitHub Pages from the `main` branch.
+Static one-page site for OccamoLab, served by GitHub Pages from the `main` branch.
 
 ## Files
 
 - `index.html` — the page.
 - `style.css` — styles, responsive and dark-mode aware.
+- `logo.png` — OccamoLab logo (also used as favicon).
 - `CNAME` — custom domain `occamolab.org`.
 - `robots.txt`, `sitemap.xml` — crawler metadata.
 - `404.html` — fallback page.
