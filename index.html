@@ -5,16 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#000000">
   <title>OccamoLab — independent research in geometric machine learning</title>
-  <meta name="description" content="Independent research lab. We compose neural networks with known laws — so models stay small, exact, and auditable.">
+  <meta name="description" content="An independent research group building neural networks that stay small, exact, and auditable by composing them with known laws.">
   <link rel="canonical" href="https://occamolab.org/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="OccamoLab">
-  <meta property="og:description" content="Independent research lab. We compose neural networks with known laws — so models stay small, exact, and auditable.">
+  <meta property="og:description" content="An independent research group building neural networks that stay small, exact, and auditable by composing them with known laws.">
   <meta property="og:url" content="https://occamolab.org/">
   <meta property="og:image" content="https://occamolab.org/logo.png">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="OccamoLab">
-  <meta name="twitter:description" content="Independent research lab. We compose neural networks with known laws — so models stay small, exact, and auditable.">
+  <meta name="twitter:description" content="An independent research group building neural networks that stay small, exact, and auditable by composing them with known laws.">
   <meta name="twitter:image" content="https://occamolab.org/logo.png">
   <link rel="icon" href="logo.png" type="image/png">
   <link rel="apple-touch-icon" href="logo.png">
@@ -29,7 +29,7 @@
         "name": "OccamoLab",
         "url": "https://occamolab.org/",
         "logo": "https://occamolab.org/logo.png",
-        "description": "Independent research lab composing neural networks with known laws — small, exact, and auditable models.",
+        "description": "An independent research group building neural networks that stay small, exact, and auditable by composing them with known laws.",
         "slogan": "A network should have exactly as many degrees of freedom as the problem has ignorance.",
         "sameAs": ["https://github.com/occamolab"],
         "founder": [
@@ -67,43 +67,53 @@
 
     <main id="main">
       <section class="hero">
-        <h1>OccamoLab</h1>
-        <p class="sub">Independent research lab. We compose neural networks with known laws — so models stay small, exact, and auditable.</p>
-        <p class="manifesto">“A network should have exactly as many degrees of freedom as the problem has ignorance.”</p>
-      </section>
-
-      <section id="publications" class="publications">
-        <p class="label">Publications</p>
-        <article>
-          <h2>
-            <a href="https://arxiv.org/abs/2611.12567">
-              LawKAN: Group-Law Layers for Composition — When Imposing a Known Law Pays Off
-            </a>
-          </h2>
-          <p class="meta">arXiv:2611.12567 · November 2026</p>
-          <p class="links">
-            <a href="https://arxiv.org/abs/2611.12567">Paper</a>
-            <a href="https://github.com/occamolab/lawkan">Code</a>
-          </p>
-          <p class="description">
-            A group-law layer: an exact composition law in the node, learned local increments
-            on the edges, and a small zero-initialized correction ψ that learns where real
-            hardware deviates from the law.
-          </p>
-          <ul class="bullets">
-            <li>Tiny models — tens to hundreds of parameters — that match or beat networks tens of times larger.</li>
-            <li>A small learned correction that beats classical estimators on real robot-arm calibration, and localizes where the hardware deviates from the law.</li>
-            <li>A cheap pre-training check (the span criterion) that says whether your features can represent the law at all — so you know where the method wins, ties, or loses before you train.</li>
-          </ul>
-        </article>
+        <h1 class="hero-copy">
+          <strong>OccamoLab</strong> — an independent research group. We build neural
+          networks that stay small, exact, and auditable by composing them with known laws.
+        </h1>
       </section>
 
       <section id="research" class="research">
         <p class="label">Research interests</p>
         <ul class="bullets">
           <li>Composing learned models with exact laws — group structure, geometric deep learning</li>
-          <li>Calibration of robot arms and inertial sensors</li>
-          <li>Tiny, parameter-efficient models for edge and embedded deployment</li>
+          <li>Robot-arm calibration and inertial navigation</li>
+          <li>Parameter-efficient models for edge and embedded deployment</li>
+        </ul>
+      </section>
+
+      <section id="lawkan" class="lawkan">
+        <p class="label">LawKAN</p>
+        <h2 class="lead">Calibration without the accuracy floor.</h2>
+        <p>
+          Real robot arms deviate from nominal kinematics: joint compliance, play, and
+          tolerances deform the composition law itself. Classical calibration assumes the
+          nominal law and fits per-joint offsets, so it cannot represent such a deformation —
+          accuracy stalls at a floor that more poses will not remove.
+        </p>
+        <p>
+          LawKAN puts the exact composition law into the layer and learns only its
+          deformation. On real arms from ABB, KUKA, Franka and Kinova, a correction of a few
+          hundred parameters beats classical Gauss–Newton calibration — small enough to
+          audit, cheap enough to run at the edge.
+        </p>
+
+        <h3 class="paper-title">
+          <a href="https://arxiv.org/abs/2611.12567">
+            LawKAN: Group-Law Layers for Composition — When Imposing a Known Law Pays Off
+          </a>
+        </h3>
+        <p class="meta">arXiv:2611.12567 · November 2026</p>
+        <p class="links">
+          <a href="https://arxiv.org/abs/2611.12567">Paper</a>
+          <a href="https://github.com/occamolab/lawkan">Code</a>
+        </p>
+
+        <ul class="bullets">
+          <li>Tiny models — tens to hundreds of parameters — matching or beating networks tens of times larger.</li>
+          <li>Data-efficient: matches classical calibration from as few as 20 poses, where tuned neural baselines need far more.</li>
+          <li>A learned correction ψ that localizes where and how the hardware deviates from the nominal law.</li>
+          <li>A cheap pre-training span check that predicts win, tie, or loss before you train.</li>
         </ul>
       </section>
 

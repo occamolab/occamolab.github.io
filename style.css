@@ -60,48 +60,24 @@ main { grid-area: main; min-width: 0; }
 
 .hero { padding: .25rem 0 0; }
 
-.kicker {
-  margin: 0 0 1.1rem;
-  color: var(--muted);
-  font-size: .72rem;
-  letter-spacing: .16em;
-  text-transform: uppercase;
-}
-
-h1 {
-  margin: 0 0 1.2rem;
-  font-family: var(--serif);
-  font-weight: 500;
-  font-size: clamp(2.6rem, 6vw, 4rem);
-  line-height: 1;
-  letter-spacing: -.045em;
-}
-
-.manifesto {
-  max-width: 34rem;
-  margin: 0 0 1.2rem;
-  font-family: var(--serif);
-  font-size: clamp(1.15rem, 2.2vw, 1.4rem);
+.hero-copy {
+  max-width: 42rem;
+  margin: 0;
+  font-size: 1.15rem;
   font-weight: 400;
-  line-height: 1.4;
-  letter-spacing: -.01em;
+  line-height: 1.65;
+  letter-spacing: -.005em;
 }
+.hero-copy strong { font-weight: 650; }
 
-.sub {
-  max-width: 38rem;
-  margin: 0 0 1.2rem;
-  color: var(--ink);
-  font-size: 1.1rem;
-}
-
-.publications, .research, .contact {
+.research, .lawkan, .contact {
   position: relative;
   margin-top: 3rem;
   padding-top: 1.5rem;
 }
 
 /* A knot on the axis, with a hairline running left into the content. */
-.publications::before, .research::before, .contact::before, .site-footer::before {
+.research::before, .lawkan::before, .contact::before, .site-footer::before {
   content: "";
   position: absolute;
   top: 0;
@@ -110,7 +86,7 @@ h1 {
   height: 1px;
   background: var(--line);
 }
-.publications::after, .research::after, .contact::after, .site-footer::after {
+.research::after, .lawkan::after, .contact::after, .site-footer::after {
   content: "";
   position: absolute;
   top: -3px;
@@ -124,28 +100,44 @@ h1 {
 }
 
 .label {
-  margin: 0 0 1.2rem;
+  margin: 0 0 1.1rem;
   color: var(--muted);
   font-size: .72rem;
   letter-spacing: .16em;
   text-transform: uppercase;
 }
 
-.publications h2 {
-  margin: 0 0 .5rem;
+.lead {
+  max-width: 38rem;
+  margin: 0 0 1.2rem;
   font-family: var(--serif);
   font-weight: 500;
-  font-size: 1.4rem;
-  line-height: 1.3;
+  font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+  line-height: 1.15;
+  letter-spacing: -.035em;
+}
+
+.lawkan p {
+  max-width: 40rem;
+  margin: 0 0 1rem;
+  color: var(--muted);
+  font-size: .98rem;
+}
+
+.paper-title {
+  max-width: 40rem;
+  margin: 2rem 0 .35rem;
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.35;
   letter-spacing: -.015em;
 }
-.publications h2 a { text-decoration: none; }
-.publications h2 a:hover { text-decoration: underline; }
+.paper-title a { text-decoration: none; }
+.paper-title a:hover { text-decoration: underline; }
 
 .meta { margin: 0 0 .35rem; color: var(--muted); font-size: .84rem; }
 .links { display: flex; gap: 1.2rem; margin: 0 0 1.2rem; font-size: .9rem; }
-
-.description { max-width: 38rem; margin: 0; color: var(--muted); font-size: .97rem; }
 
 .bullets { max-width: 40rem; margin: 1rem 0 0; padding-left: 1.1rem; color: var(--muted); font-size: .95rem; }
 .bullets li { margin: .45rem 0; }
@@ -178,8 +170,9 @@ h1 {
   }
   .brand img { height: 72px; }
   .hero { padding-top: .5rem; }
-  .publications, .research, .contact { margin-top: 2.5rem; border-top: 1px solid var(--line); }
+  .hero-copy { font-size: 1.05rem; }
+  .research, .lawkan, .contact { margin-top: 2.5rem; border-top: 1px solid var(--line); }
   .site-footer { border-top: 1px solid var(--line); }
-  .publications::before, .research::before, .contact::before, .site-footer::before,
-  .publications::after, .research::after, .contact::after, .site-footer::after { display: none; }
+  .research::before, .lawkan::before, .contact::before, .site-footer::before,
+  .research::after, .lawkan::after, .contact::after, .site-footer::after { display: none; }
 }
