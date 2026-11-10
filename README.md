@@ -1,5 +1,7 @@
 # occamolab.org
 
+**Live site:** [https://occamolab.org](https://occamolab.org)
+
 Static one-page site for OccamoLab, served by GitHub Pages from the `main` branch.
 
 ## Files
