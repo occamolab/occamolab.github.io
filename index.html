@@ -5,16 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#000000">
   <title>OccamoLab — independent research in geometric machine learning</title>
-  <meta name="description" content="OccamoLab is an independent research project working on geometric machine learning, group-structured models, robot calibration, and inertial navigation.">
+  <meta name="description" content="Independent research lab. We compose neural networks with known laws — so models stay small, exact, and auditable.">
   <link rel="canonical" href="https://occamolab.org/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="OccamoLab">
-  <meta property="og:description" content="Independent research in geometric machine learning.">
+  <meta property="og:description" content="Independent research lab. We compose neural networks with known laws — so models stay small, exact, and auditable.">
   <meta property="og:url" content="https://occamolab.org/">
   <meta property="og:image" content="https://occamolab.org/logo.png">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="OccamoLab">
-  <meta name="twitter:description" content="Independent research in geometric machine learning.">
+  <meta name="twitter:description" content="Independent research lab. We compose neural networks with known laws — so models stay small, exact, and auditable.">
   <meta name="twitter:image" content="https://occamolab.org/logo.png">
   <link rel="icon" href="logo.png" type="image/png">
   <link rel="apple-touch-icon" href="logo.png">
@@ -29,7 +29,7 @@
         "name": "OccamoLab",
         "url": "https://occamolab.org/",
         "logo": "https://occamolab.org/logo.png",
-        "description": "Independent research in geometric machine learning, group-structured models, robot calibration, and inertial navigation.",
+        "description": "Independent research lab composing neural networks with known laws — small, exact, and auditable models.",
         "slogan": "A network should have exactly as many degrees of freedom as the problem has ignorance.",
         "sameAs": ["https://github.com/occamolab"],
         "founder": [
@@ -67,36 +67,58 @@
 
     <main id="main">
       <section class="hero">
-        <p class="kicker">Independent research</p>
-        <h1>Structure first.</h1>
+        <h1>OccamoLab</h1>
+        <p class="sub">Independent research lab. We compose neural networks with known laws — so models stay small, exact, and auditable.</p>
         <p class="manifesto">“A network should have exactly as many degrees of freedom as the problem has ignorance.”</p>
-        <p class="sub">Geometric machine learning for transformations that compose by a known rule.</p>
       </section>
 
-      <section id="work" class="work">
-        <p class="label">Selected work</p>
+      <section id="publications" class="publications">
+        <p class="label">Publications</p>
         <article>
           <h2>
             <a href="https://arxiv.org/abs/2611.12567">
               LawKAN: Group-Law Layers for Composition — When Imposing a Known Law Pays Off
             </a>
           </h2>
-          <p class="meta">Mishchenko &amp; Gavrilin · arXiv:2611.12567 · 2026</p>
+          <p class="meta">arXiv:2611.12567 · November 2026</p>
           <p class="links">
             <a href="https://arxiv.org/abs/2611.12567">Paper</a>
-            <a href="https://doi.org/10.48550/arXiv.2611.12567">DOI</a>
             <a href="https://github.com/occamolab/lawkan">Code</a>
           </p>
+          <p class="description">
+            A group-law layer: an exact composition law in the node, learned local increments
+            on the edges, and a small zero-initialized correction ψ that learns where real
+            hardware deviates from the law.
+          </p>
+          <ul class="bullets">
+            <li>Tiny models — tens to hundreds of parameters — that match or beat networks tens of times larger.</li>
+            <li>A small learned correction that beats classical estimators on real robot-arm calibration, and localizes where the hardware deviates from the law.</li>
+            <li>A cheap pre-training check (the span criterion) that says whether your features can represent the law at all — so you know where the method wins, ties, or loses before you train.</li>
+          </ul>
         </article>
+      </section>
+
+      <section id="research" class="research">
+        <p class="label">Research interests</p>
+        <ul class="bullets">
+          <li>Composing learned models with exact laws — group structure, geometric deep learning</li>
+          <li>Calibration of robot arms and inertial sensors</li>
+          <li>Tiny, parameter-efficient models for edge and embedded deployment</li>
+        </ul>
       </section>
 
       <section id="contact" class="contact">
         <p class="label">Contact</p>
-        <p><a href="mailto:hello@occamolab.org">hello@occamolab.org</a></p>
+        <p>
+          <a href="mailto:hello@occamolab.org">hello@occamolab.org</a>
+          <span aria-hidden="true">·</span>
+          <a href="https://github.com/occamolab">github.com/occamolab</a>
+        </p>
+        <p class="note">Commercial licensing of the LawKAN code is available on request.</p>
       </section>
 
       <footer class="site-footer">
-        <p>© 2026 OccamoLab</p>
+        <p>© 2026 OccamoLab · Independent research lab</p>
       </footer>
     </main>
   </div>
