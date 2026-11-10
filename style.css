@@ -33,6 +33,7 @@ a:hover { color: var(--muted); }
 
 .page {
   max-width: 1120px;
+  min-height: 100vh;
   margin: 0 auto;
   padding: 2.5rem 1.5rem 2rem;
   display: grid;
@@ -41,14 +42,14 @@ a:hover { color: var(--muted); }
   column-gap: 4rem;
 }
 
-/* The razor: one thin vertical line, one third of the viewport. */
+/* The razor: a full-height axis with the wordmark attached at the top. */
 .rail {
   grid-area: rail;
-  height: 33vh;
+  align-self: stretch;
   border-left: 1px solid var(--line);
-  padding-left: 2.5rem;
+  padding-left: 1rem;
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: flex-start;
 }
 
@@ -94,9 +95,32 @@ h1 {
 }
 
 .work, .contact {
+  position: relative;
   margin-top: 3rem;
   padding-top: 1.5rem;
-  border-top: 1px solid var(--line);
+}
+
+/* A knot on the axis, with a hairline running left into the content. */
+.work::before, .contact::before, .site-footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% + 4rem);
+  height: 1px;
+  background: var(--line);
+}
+.work::after, .contact::after, .site-footer::after {
+  content: "";
+  position: absolute;
+  top: -3px;
+  right: calc(-4rem - 3px);
+  width: 7px;
+  height: 7px;
+  box-sizing: border-box;
+  border: 1px solid var(--muted);
+  border-radius: 50%;
+  background: var(--bg);
 }
 
 .label {
@@ -124,9 +148,9 @@ h1 {
 .contact p { margin: 0; font-size: 1rem; }
 
 .site-footer {
+  position: relative;
   margin-top: 3rem;
   padding-top: 1.2rem;
-  border-top: 1px solid var(--line);
   color: var(--muted);
   font-size: .78rem;
 }
@@ -140,7 +164,6 @@ h1 {
     padding: 1.5rem 1.25rem 2rem;
   }
   .rail {
-    height: auto;
     border-left: 0;
     border-bottom: 1px solid var(--line);
     padding: 0 0 1rem;
@@ -148,5 +171,8 @@ h1 {
   }
   .brand img { height: 72px; }
   .hero { padding-top: .5rem; }
-  .work, .contact { margin-top: 2.5rem; }
+  .work, .contact { margin-top: 2.5rem; border-top: 1px solid var(--line); }
+  .site-footer { border-top: 1px solid var(--line); }
+  .work::before, .contact::before, .site-footer::before,
+  .work::after, .contact::after, .site-footer::after { display: none; }
 }
