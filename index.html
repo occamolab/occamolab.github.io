@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OccamLab — independent research in geometric machine learning</title>
+  <meta name="description" content="OccamLab is an independent research project working on geometric machine learning, group-structured models, robot calibration, and inertial navigation.">
+  <link rel="canonical" href="https://occamolab.org/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="OccamLab — independent research in geometric machine learning">
+  <meta property="og:description" content="Group-structured models for composition, robot calibration, and inertial navigation.">
+  <meta property="og:url" content="https://occamolab.org/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="OccamLab — independent research in geometric machine learning">
+  <meta name="twitter:description" content="Group-structured models for composition, robot calibration, and inertial navigation.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231b2a4a'/%3E%3Cpath d='M20 40c0-8 6-16 14-16s12 6 12 12-5 12-12 12c-4 0-8-2-10-5' fill='none' stroke='%23e8b04b' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://occamolab.org/#org",
+        "name": "OccamLab",
+        "url": "https://occamolab.org/",
+        "description": "Independent research in geometric machine learning, group-structured models, robot calibration, and inertial navigation.",
+        "sameAs": ["https://github.com/occamolab"],
+        "founder": [
+          {"@type": "Person", "name": "Anna Mishchenko"},
+          {"@type": "Person", "name": "Nikolai Gavrilin"}
+        ]
+      },
+      {
+        "@type": "ScholarlyArticle",
+        "@id": "https://arxiv.org/abs/2611.12567",
+        "headline": "LawKAN: Group-Law Layers for Composition — When Imposing a Known Law Pays Off",
+        "author": [
+          {"@type": "Person", "name": "Anna Mishchenko"},
+          {"@type": "Person", "name": "Nikolai Gavrilin"}
+        ],
+        "datePublished": "2026-11-09",
+        "identifier": "https://doi.org/10.48550/arXiv.2611.12567",
+        "url": "https://arxiv.org/abs/2611.12567",
+        "sameAs": ["https://github.com/occamolab/lawkan"],
+        "isPartOf": {"@type": "Periodical", "name": "arXiv", "issn": "2331-8422"}
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <a class="wordmark" href="/" aria-label="OccamLab home">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 64 64" role="img"><rect width="64" height="64" rx="14" fill="currentColor" opacity=".12"/><path d="M20 40c0-8 6-16 14-16s12 6 12 12-5 12-12 12c-4 0-8-2-10-5" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/></svg>
+      </span>
+      <span>OccamLab</span>
+    </a>
+    <nav aria-label="Main">
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#people">People</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <p class="eyebrow">Independent research · geometric machine learning</p>
+      <h1>Impose the structure you know.<br>Learn only the remainder.</h1>
+      <p class="lede">
+        OccamLab studies models for transformations that compose by a known rule —
+        rotations, rigid motions, and the group laws behind them. We build the exact
+        law into the model, learn the local increments, and measure when that structure
+        pays off and when it does not.
+      </p>
+      <div class="actions">
+        <a class="button primary" href="https://arxiv.org/abs/2611.12567">Read the paper</a>
+        <a class="button" href="https://github.com/occamolab/lawkan">Code &amp; artifact</a>
+      </div>
+    </section>
+
+    <section id="research" class="section">
+      <div class="section-head">
+        <h2>Research</h2>
+        <p>One question, three levels of structure.</p>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <h3>The law in the node</h3>
+          <p>
+            An exact, non-commutative group law sits in the node of a self-contained layer.
+            The edge learns only the local step into the group, so composition is representable
+            exactly when the edge features span the chart’s logarithm.
+          </p>
+        </article>
+        <article class="card">
+          <h3>Learning the deviation</h3>
+          <p>
+            Real hardware bends the law. A small, zero-initialized correction ψ is trained in
+            isolation on the frozen exact edge; its shape localizes a law-side deformation and
+            doubles as a test of whether the law holds.
+          </p>
+        </article>
+        <article class="card">
+          <h3>A measured envelope</h3>
+          <p>
+            We report where the recipe gives parity, where it wins, and where it loses — on
+            synthetic composition, three robot vendors, two calibration protocols, consumer IMUs,
+            and a gyroscope. Negative results are kept.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="publications" class="section">
+      <div class="section-head">
+        <h2>Publications</h2>
+        <p>Preprints and artifacts.</p>
+      </div>
+
+      <article class="publication">
+        <div class="pub-meta">
+          <span class="tag">arXiv:2611.12567</span>
+          <span class="tag muted">cs.LG · cs.RO</span>
+          <time datetime="2026-11-09">November 2026</time>
+        </div>
+        <h3>LawKAN: Group-Law Layers for Composition — When Imposing a Known Law Pays Off</h3>
+        <p class="authors">Anna Mishchenko, Nikolai Gavrilin</p>
+        <p>
+          Composition is a non-commutative product. LawKAN puts the exact group law in the
+          node, learns only the local increment on the edge, and adds a zero-initialized
+          correction for hardware deviations. The paper maps when this pays off:
+          a 54-parameter dense edge on fixed-angle SU(2) composition, an isolated
+          306-parameter correction reaching 1.12–1.14 mm versus 1.29–1.33 mm for
+          Gauss–Newton on real robot arms at N ≥ 60, parity where the law holds, and
+          clear losses where the imposed law is not the task’s.
+        </p>
+        <div class="pub-links">
+          <a href="https://arxiv.org/abs/2611.12567">arXiv</a>
+          <a href="https://doi.org/10.48550/arXiv.2611.12567">DOI</a>
+          <a href="https://github.com/occamolab/lawkan">Code</a>
+        </div>
+      </article>
+    </section>
+
+    <section id="people" class="section">
+      <div class="section-head">
+        <h2>People</h2>
+        <p>Independent researchers.</p>
+      </div>
+      <div class="people">
+        <article class="person">
+          <h3>Anna Mishchenko</h3>
+          <p>Geometric machine learning, group-structured models, robot calibration, inertial navigation.</p>
+        </article>
+        <article class="person">
+          <h3>Nikolai Gavrilin</h3>
+          <p>Machine learning systems, optimization, and reproducible experiments on real hardware.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact">
+      <h2>Contact</h2>
+      <p>
+        For questions about the paper, code, or collaboration:
+        <a href="mailto:hello@occamolab.org">hello@occamolab.org</a>.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 OccamLab · independent research</p>
+    <p>
+      <a href="https://github.com/occamolab">GitHub</a>
+      <span aria-hidden="true">·</span>
+      <a href="https://arxiv.org/abs/2611.12567">arXiv</a>
+    </p>
+  </footer>
+</body>
+</html>
