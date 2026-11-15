@@ -4,21 +4,26 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#000000">
-  <title>OccamoLab — independent research in geometric machine learning</title>
-  <meta name="description" content="A research group composing neural networks with known laws: small, exact, auditable models.">
+  <title>Robot arm calibration: 7–36% lower error — OccamoLab</title>
+  <meta name="description" content="LawKAN keeps the exact kinematic model and learns a small correction for compliance, play and drift. Results on FR3, ABB, KUKA and Panda; open code and paper.">
   <link rel="canonical" href="https://occamolab.org/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="OccamoLab">
-  <meta property="og:description" content="A research group composing neural networks with known laws: small, exact, auditable models.">
+  <meta property="og:title" content="Robot arm calibration: 7–36% lower error">
+  <meta property="og:description" content="A small learned correction on top of exact kinematics. Results on FR3, ABB, KUKA and Panda; open code.">
   <meta property="og:url" content="https://occamolab.org/">
-  <meta property="og:image" content="https://occamolab.org/logo.png">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="OccamoLab">
-  <meta name="twitter:description" content="A research group composing neural networks with known laws: small, exact, auditable models.">
-  <meta name="twitter:image" content="https://occamolab.org/logo.png">
+  <meta property="og:image" content="https://occamolab.org/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:alt" content="Robot-arm calibration without the accuracy floor — OccamoLab">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Robot arm calibration: 7–36% lower error">
+  <meta name="twitter:description" content="A small learned correction on top of exact kinematics. Results on FR3, ABB, KUKA and Panda; open code.">
+  <meta name="twitter:image" content="https://occamolab.org/og-image.png">
+  <meta name="twitter:image:alt" content="Robot-arm calibration without the accuracy floor — OccamoLab">
   <link rel="icon" href="logo.png" type="image/png">
   <link rel="apple-touch-icon" href="logo.png">
-  <link rel="stylesheet" href="style.css?v=7">
+  <link rel="stylesheet" href="style.css?v=24">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -29,7 +34,7 @@
         "name": "OccamoLab",
         "url": "https://occamolab.org/",
         "logo": "https://occamolab.org/logo.png",
-        "description": "A research group composing neural networks with known laws: small, exact, auditable models.",
+        "description": "A small learned correction on top of exact kinematics for robot-arm calibration.",
         "slogan": "A network should have exactly as many degrees of freedom as the problem has ignorance.",
         "sameAs": ["https://github.com/occamolab"],
         "founder": [
@@ -62,43 +67,50 @@
 
   <div class="page">
     <aside class="rail" aria-label="OccamoLab">
-      <a class="brand" href="/" aria-label="OccamoLab home">
+      <a class="brand" href="/" aria-label="OccamoLab home" data-goatcounter-click="brand-home">
         <img src="logo-mark.png" alt="OccamoLab" width="124" height="96">
       </a>
     </aside>
 
     <main id="main">
       <section class="hero">
-        <h1 class="sr-only">OccamoLab</h1>
+        <h1 class="hero-title">Robot-arm calibration without the accuracy floor.</h1>
         <p class="hero-copy">
-          <strong>OccamoLab</strong> — a research group composing neural networks with known
-          laws: small, exact, auditable models.
+          We keep the exact kinematic model and learn only what real hardware adds — compliance,
+          play, drift.
         </p>
+        <p class="what-you-get">
+          <strong>What you get.</strong> A small learned model for your calibration pipeline —
+          licensed, piloted on your data, or integrated into your stack.
+        </p>
+        <div class="hero-stats" aria-label="Key results">
+          <span><strong>7–36%</strong> lower held-out error</span>
+          <span><strong>4</strong> platforms</span>
+          <span><strong>306</strong> learned values on FR3</span>
+        </div>
+
+        <div class="hero-actions">
+          <a class="button primary" href="#cases" data-goatcounter-click="hero-results">See results</a>
+          <a class="button" href="#fit" data-goatcounter-click="hero-fit">Check your task</a>
+        </div>
 
         <div class="interests">
-          <p class="label">Research interests</p>
+          <p class="label">Advantages</p>
           <ul class="bullets">
-            <li>Group-law layers and geometric deep learning</li>
-            <li>Robot-arm calibration and inertial navigation</li>
-            <li>Parameter-efficient models for edge and embedded deployment</li>
+            <li><strong>Lower error where deformation matters.</strong> Where hardware deforms the kinematic law, LawKAN removes the accuracy floor left by the classical estimator. Where there is no deformation, it matches the classical fit and does not degrade it.</li>
+            <li><strong>Diagnostic by design.</strong> The small learned correction is inspectable and shows where and how the hardware deviates from the nominal law — not just a black-box accuracy gain.</li>
+            <li><strong>Smaller and stronger at small N.</strong> 306 learned values vs tens of thousands for a tuned MLP; lower error on small pose sets, small enough for the edge.</li>
           </ul>
         </div>
       </section>
 
       <section id="lawkan" class="lawkan">
         <p class="label">LawKAN</p>
-        <h2 class="lead">Calibration without the accuracy floor.</h2>
+        <h2 class="lead">How it works</h2>
         <p>
-          Industrial robot arms deviate from nominal kinematics: joint compliance, play, and
-          tolerances deform the composition law itself. Classical per-joint calibration cannot
-          represent such a deformation, so accuracy stalls at a floor that more poses will not
-          remove.
-        </p>
-        <p>
-          LawKAN puts the exact composition law into the layer and learns only its
-          deformation. On arms from ABB, KUKA, Franka and Kinova, a few-hundred-parameter
-          correction beats classical Gauss–Newton — small enough to audit, cheap enough to run
-          at the edge.
+          LawKAN keeps the kinematic law fixed and learns only its deviation. A small correction
+          absorbs compliance, play, and tolerance effects; a pre-training span check says whether
+          the data can support it.
         </p>
 
         <div class="paper-card">
@@ -114,11 +126,137 @@
           </p>
         </div>
 
-        <ul class="bullets">
-          <li>Data-efficient: matches classical calibration from as few as 20 poses, where tuned neural baselines need far more.</li>
-          <li>The learned correction ψ localizes where and how the hardware deviates from the nominal law.</li>
-          <li>A cheap pre-training span check predicts win, tie, or loss before you train.</li>
-        </ul>
+      </section>
+
+      <section id="cases" class="cases">
+        <p class="label">Results</p>
+        <h2 class="lead">Robot arm calibration</h2>
+        <p class="section-note">
+          Error is measured on poses not used for calibration; lower is better.
+        </p>
+
+        <div class="case-grid">
+          <article class="case-card">
+            <p class="case-meta">FR3 · PhilNad</p>
+            <div class="case-head">
+              <h3 class="case-title">Lower error with fewer poses</h3>
+              <p class="case-gain">−16%</p>
+            </div>
+            <p class="case-abs">1.12 vs 1.33 mm · N=80</p>
+            <div class="case-bars" aria-hidden="true">
+              <div class="bar-row"><span class="bar-label">Gauss–Newton</span><span class="bar-track"><span class="bar-fill baseline" style="width:100%"></span></span><span class="bar-val">1.33</span></div>
+              <div class="bar-row"><span class="bar-label">LawKAN</span><span class="bar-track"><span class="bar-fill better" style="width:84%"></span></span><span class="bar-val">1.12</span></div>
+            </div>
+            <p class="case-links">
+              <a class="case-code" href="https://github.com/occamolab/lawkan/blob/main/experiments/real/X35_recount_fr3.py" data-goatcounter-click="case-fr3-code">Code</a>
+              <a class="case-cta" href="#fit" data-case="FR3-arm" data-request="Whether it fits my task" data-goatcounter-click="case-fr3-fit">My setup is similar →</a>
+            </p>
+          </article>
+
+          <article class="case-card">
+            <p class="case-meta">ABB · RobotCali</p>
+            <div class="case-head">
+              <h3 class="case-title">Lower error from range-only data</h3>
+              <p class="case-gain">−8%</p>
+            </div>
+            <p class="case-abs">1.06 vs 1.20 mm · 320 measurements</p>
+            <div class="case-bars" aria-hidden="true">
+              <div class="bar-row"><span class="bar-label">Gauss–Newton</span><span class="bar-track"><span class="bar-fill baseline" style="width:100%"></span></span><span class="bar-val">1.20</span></div>
+              <div class="bar-row"><span class="bar-label">LawKAN</span><span class="bar-track"><span class="bar-fill better" style="width:88%"></span></span><span class="bar-val">1.06</span></div>
+            </div>
+            <p class="case-detail">Range-only measurements, no full pose capture.</p>
+            <p class="case-links">
+              <a class="case-code" href="https://github.com/occamolab/lawkan/blob/main/experiments/real/RC1_robotcali.py" data-goatcounter-click="case-abb-code">Code</a>
+              <a class="case-cta" href="#fit" data-case="ABB-range" data-request="Whether it fits my task" data-goatcounter-click="case-abb-fit">My setup is similar →</a>
+            </p>
+          </article>
+
+          <article class="case-card">
+            <p class="case-meta">MUKCa · KUKA / Panda</p>
+            <div class="case-head">
+              <h3 class="case-title">Lower error on socket data</h3>
+              <p class="case-gain">−36% <span>/ −33%</span></p>
+            </div>
+            <p class="case-abs">KUKA 0.166 vs 0.26 mm · Panda 0.330 vs 0.49 mm</p>
+            <div class="case-bars" aria-hidden="true">
+              <div class="bar-row"><span class="bar-label">KUKA baseline</span><span class="bar-track"><span class="bar-fill baseline" style="width:100%"></span></span><span class="bar-val">0.26</span></div>
+              <div class="bar-row"><span class="bar-label">KUKA LawKAN</span><span class="bar-track"><span class="bar-fill better" style="width:64%"></span></span><span class="bar-val">0.166</span></div>
+              <div class="bar-row"><span class="bar-label">Panda baseline</span><span class="bar-track"><span class="bar-fill baseline" style="width:100%"></span></span><span class="bar-val">0.49</span></div>
+              <div class="bar-row"><span class="bar-label">Panda LawKAN</span><span class="bar-track"><span class="bar-fill better" style="width:67%"></span></span><span class="bar-val">0.330</span></div>
+            </div>
+            <p class="case-detail">Unseen socket poses; same protocol, two vendors.</p>
+            <p class="case-links">
+              <a class="case-code" href="https://github.com/occamolab/lawkan/blob/main/experiments/real/X36_recount_socket.py" data-goatcounter-click="case-mukca-code">Code</a>
+              <a class="case-cta" href="#fit" data-case="MUKCa-sockets" data-request="Whether it fits my task" data-goatcounter-click="case-mukca-fit">My setup is similar →</a>
+            </p>
+          </article>
+        </div>
+
+        <p class="case-footnote">
+          Off-pose error, lower is better. FR3: at 20–60 poses the gain is within run-to-run noise
+          (at 40 poses ≈11%). ABB: tie at 80 measurements. MUKCa: single unit per vendor.
+        </p>
+
+        <div class="limits">
+          <p class="label">Limits</p>
+          <p>
+            <strong>Not every case is a win.</strong> Where the classical fit already sits at the
+            noise floor (BROAD IMU, gyroscope calibration), the law layer buys a smaller model,
+            not lower error. On UR5 and Kinova sockets the classical fit is at least as good.
+            Parity is still useful, but we do not call it a win.
+          </p>
+        </div>
+      </section>
+
+      <section id="fit" class="fit">
+        <p class="label">Start a conversation</p>
+        <h2 class="lead">Could this work for you?</h2>
+        <p class="section-note">
+          Tell us what you’re working on. We’ll take a first look and say whether a pilot
+          makes sense.
+        </p>
+        <ol class="fit-list">
+          <li>Tell us what you’re working on.</li>
+          <li>We take a first look: is there a law and a deformation?</li>
+          <li>If it fits, a pilot on your data.</li>
+        </ol>
+
+        <form id="fit-form" class="fit-form" action="https://formspree.io/f/mdegedyy" method="POST" novalidate>
+          <input type="hidden" name="case_id" value="other">
+          <input type="hidden" name="_subject" value="Website request — OccamoLab">
+          <p id="case-note" class="case-note" hidden></p>
+          <div class="form-row">
+            <label>Name<input name="name" autocomplete="name" required></label>
+            <label>Email<input name="email" type="email" autocomplete="email" required></label>
+          </div>
+          <div class="form-row">
+            <label>Organisation (optional)<input name="org" autocomplete="organization"></label>
+            <label>What would you like to discuss?
+              <select name="request">
+                <option>Just exploring</option>
+                <option>Whether it fits my task</option>
+                <option>A possible pilot</option>
+                <option>Integration</option>
+                <option>Licensing</option>
+              </select>
+            </label>
+          </div>
+          <label>What are you working on? (optional)<textarea name="task" rows="4" placeholder="A sentence is enough."></textarea></label>
+          <label>Link or data (optional)<textarea name="data" rows="2"></textarea></label>
+          <div class="hp" aria-hidden="true">
+            <label>Website<input name="_gotcha" tabindex="-1" autocomplete="off"></label>
+          </div>
+          <label class="consent">
+            <input type="checkbox" name="consent" required>
+            I agree to be contacted about this request. No sensitive data is sent.
+          </label>
+          <p class="form-note">We reply in 1–2 business days. This form is processed by Formspree — see <a href="privacy.html">Privacy</a>.</p>
+          <p id="form-error" class="form-error" role="alert" hidden></p>
+          <p id="form-success" class="form-success" role="status" hidden>
+            Thanks — we’ll reply in 1–2 business days.
+          </p>
+          <button class="button primary" type="submit" data-goatcounter-click="fit-submit">Send message</button>
+        </form>
       </section>
 
       <section id="contact" class="contact">
@@ -133,9 +271,94 @@
       </section>
 
       <footer class="site-footer">
-        <p>© 2026 OccamoLab</p>
+        <p>© 2026 OccamoLab · <a href="privacy.html" data-goatcounter-click="privacy">Privacy</a></p>
       </footer>
     </main>
   </div>
+
+
+  <script>
+    (function () {
+      const form = document.getElementById('fit-form');
+      if (!form) return;
+      const errorBox = document.getElementById('form-error');
+      const successBox = document.getElementById('form-success');
+      const button = form.querySelector('button[type="submit"]');
+      const caseNote = document.getElementById('case-note');
+      const get = (k) => (new FormData(form).get(k) || '').toString().trim();
+      let started = false;
+
+      form.addEventListener('focusin', function () {
+        if (started) return;
+        started = true;
+        if (window.goatcounter && window.goatcounter.count) {
+          window.goatcounter.count({ path: 'form-start', event: true });
+        }
+      });
+
+      document.querySelectorAll('[data-case]').forEach(function (link) {
+        link.addEventListener('click', function () {
+          const caseField = form.querySelector('[name="case_id"]');
+          const requestField = form.querySelector('[name="request"]');
+          if (caseField) caseField.value = link.getAttribute('data-case');
+          if (requestField && link.getAttribute('data-request')) {
+            requestField.value = link.getAttribute('data-request');
+          }
+          const card = link.closest('.case-card');
+          const meta = card && card.querySelector('.case-meta');
+          if (caseNote && meta) {
+            caseNote.textContent = 'From: ' + meta.textContent.trim();
+            caseNote.hidden = false;
+          }
+        });
+      });
+
+      function fail(message, field) {
+        errorBox.textContent = message;
+        errorBox.hidden = false;
+        if (field) field.focus();
+      }
+
+      form.addEventListener('submit', async function (event) {
+        event.preventDefault();
+        errorBox.hidden = true;
+        if (get('_gotcha')) return; // honeypot: silently ignore bots
+        if (!get('name')) return fail('Please enter your name.', form.querySelector('[name="name"]'));
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(get('email'))) {
+          return fail('Please enter a valid email address.', form.querySelector('[name="email"]'));
+        }
+        if (!get('consent')) {
+          return fail('Please accept the contact consent.', form.querySelector('[name="consent"]'));
+        }
+        const subject = ['Website request', get('case_id') !== 'other' ? get('case_id') : '',
+                         get('org')].filter(Boolean).join(' — ');
+        form.querySelector('[name="_subject"]').value = subject;
+        const label = button.textContent;
+        button.disabled = true;
+        button.textContent = 'Sending…';
+        try {
+          const response = await fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { Accept: 'application/json' }
+          });
+          if (!response.ok) {
+            const data = await response.json().catch(function () { return {}; });
+            throw new Error(data.error || 'Request failed');
+          }
+          form.hidden = true;
+          successBox.hidden = false;
+          if (window.goatcounter && window.goatcounter.count) {
+            window.goatcounter.count({ path: 'lead-submit', event: true });
+          }
+        } catch (err) {
+          fail('Something went wrong — email hello@occamolab.org.', null);
+        } finally {
+          button.disabled = false;
+          button.textContent = label;
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
